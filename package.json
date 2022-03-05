@@ -1,0 +1,23 @@
+{
+  "name": "drag-drop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayyyan/Drag-Drop.git"
+  },
+  "author": "Benchendikh abdelkaioum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rayyyan/Drag-Drop/issues"
+  },
+  "homepage": "https://github.com/rayyyan/Drag-Drop#readme",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
+}
