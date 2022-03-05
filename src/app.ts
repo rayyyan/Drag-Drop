@@ -1,4 +1,18 @@
 console.log("Drag and drop")
+
+//autobind Decorator
+
+function AutoBind(_: any, __: string, descriptor: PropertyDescriptor) {
+  const originalMethod = descriptor.value
+  const adjDescriptor: PropertyDescriptor = {
+    configurable: true,
+    get() {
+      const boundFn = originalMethod.bind(this)
+      return boundFn
+    },
+  }
+  return adjDescriptor
+}
 class ProjectInput {
   templateElement: HTMLTemplateElement
   hostElement: HTMLDivElement
@@ -27,9 +41,10 @@ class ProjectInput {
     this.configure()
     this.attach()
   }
+  @AutoBind
   private submitHandler(event: Event) {
     event.preventDefault()
-    alert("You just submited")
+    console.log(this.titleInputElement.value)
   }
   private configure() {
     this.element.addEventListener("submit", this.submitHandler)
